@@ -21,7 +21,7 @@ class FacebookController extends Controller
     public function callback()
     {
         $user = Socialite::driver('facebook')->user();
-        if (!empty(User::where('fb_id', $user->id))){
+        if (User::where('fb_id', $user->id) !== null){
             Auth::login(User::where('fb_id', $user->id)->first());
             return redirect()->route('home');
         }else{
