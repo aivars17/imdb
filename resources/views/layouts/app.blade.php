@@ -12,11 +12,17 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
 </head>
 <body>
+
+<div class="ui-widget">
+    <label for="tags">Tags: </label>
+    <input id="tags">
+</div>
 
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
@@ -92,6 +98,8 @@
 
     <script src="{{ asset('js/app.js') }}"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
 
@@ -128,39 +136,74 @@
 
 
 
-        {{--function search(){--}}
+        function search(){
 
-                {{--console.log(document.getElementById('search_text').value);--}}
-
-
-
-            {{--var dataId = document.getElementById('search_text').value;--}}
-            {{--var token = $('meta[name="csrf-token"]').attr('content');--}}
-            {{--$.ajax({--}}
-
-                {{--type:'POST',--}}
-                {{--url:"{!! URL::to('test') !!}",--}}
-                {{--dataType: 'JSON',--}}
-                {{--data: {--}}
-                    {{--"_method": 'POST',--}}
-                    {{--"_token": token,--}}
-                    {{--"id": dataId,--}}
-                {{--},--}}
-                {{--success:function(data){--}}
-                    {{--console.log('success');--}}
-
-                {{--},--}}
-                {{--error:function(){--}}
-
-                {{--},--}}
-            {{--});--}}
+                console.log(document.getElementById('search_text').value);
 
 
 
+            var dataId = document.getElementById('search_text').value;
+            var token = $('meta[name="csrf-token"]').attr('content');
+            $.ajax({
 
-        {{--}--}}
+                type:'POST',
+                url:"{!! URL::to('test') !!}",
+                dataType: 'JSON',
+                data: {
+                    "_method": 'POST',
+                    "_token": token,
+                    "id": dataId,
+                },
+                success:function(data){
+                    console.log('success');
+
+                },
+                error:function(){
+
+                },
+            });
 
 
+
+
+        }
+
+
+</script>
+
+
+
+
+<script>
+    $( function() {
+        var availableTags = [
+            "ActionScript",
+            "AppleScript",
+            "Asp",
+            "BASIC",
+            "C",
+            "C++",
+            "Clojure",
+            "COBOL",
+            "ColdFusion",
+            "Erlang",
+            "Fortran",
+            "Groovy",
+            "Haskell",
+            "Java",
+            "JavaScript",
+            "Lisp",
+            "Perl",
+            "PHP",
+            "Python",
+            "Ruby",
+            "Scala",
+            "Scheme"
+        ];
+        $( "#tags" ).autocomplete({
+            source: availableTags
+        });
+    } );
 </script>
 
 </body>

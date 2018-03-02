@@ -38,7 +38,7 @@ return [
     'facebook' => [
         'client_id' => env('FB_ID'),
         'client_secret' => env('FB_SECRET'),
-        'redirect' => 'http://imdb.test/fb/callback',
+        'redirect' => 'fb/callback',
     ]
 
 ];
