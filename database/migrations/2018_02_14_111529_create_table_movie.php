@@ -19,7 +19,7 @@ class CreateTableMovie extends Migration
             $table->unsignedInteger('category_id');
             $table->unsignedInteger('user_id');
             $table->text('description');
-            $table->integer('year');
+            $table->date('year');
             $table->double('rating');
             $table->timestamps();
 
