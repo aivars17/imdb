@@ -50,7 +50,7 @@ class UploadController extends Controller
         if($user->role == 'admin'){
             return view('admin.moviesMoviesSeeder',[
                 'cats' => $categories,
-                'moviesMoviesSeeder' => $movies,
+                'MoviesSeeder' => $movies,
             ]);
         }
         return redirect()->route('single_movie', [$id,$movie->name]);

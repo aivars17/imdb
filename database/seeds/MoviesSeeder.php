@@ -7,7 +7,7 @@ use App\Movie;
 use App\Actor;
 
 
-class MoviesMoviesSeeder extends Seeder
+class MoviesSeeder extends Seeder
 {
     /**
      * Run the database seeds.

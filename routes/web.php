@@ -31,7 +31,7 @@ Route::group(['middleware' => 'multiauth'], function () {
     Route::get('/admin/users', 'AdminController@users')->name('edit_users');
     Route::post('/admin/categories', 'AdminController@show')->name('edit_cat');
     Route::post('/admin/categories/{id}', 'AdminController@update_cat')->name('update_cat');
-    Route::get('/admin/moviesMoviesSeeder', 'MoviesController@index')->name('moviesMoviesSeeder');
+    Route::get('/admin/moviesMoviesSeeder', 'MoviesController@index')->name('MoviesSeeder');
     Route::post('/admin/moviesMoviesSeeder/update/{id}', 'MoviesController@movie_update')->name('movie_update');
     Route::post('/admin/moviesMoviesSeeder/save', 'MoviesController@movie_save')->name('movie_save');
     Route::get('/admin/movie/{id}', 'MoviesController@movie_edit')->name('movie_edit');

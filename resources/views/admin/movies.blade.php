@@ -41,7 +41,7 @@
                 <button type="submit" class="btn btn-primary">Save</button>
                 @else
                     <button type="submit" class="btn btn-primary">Update</button>
-                <a href="{{ route('moviesMoviesSeeder') }}" class="btn btn-primary">New</a>
+                <a href="{{ route('MoviesSeeder') }}" class="btn btn-primary">New</a>
                 @endif
             </form>
 

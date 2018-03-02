@@ -7,7 +7,7 @@
                     <h2>Admin panel</h2>
                     <ul>
                         <li><a href="{{ route('edit_users') }}">Users</a></li>
-                        <li><a href="{{ route('moviesMoviesSeeder') }}">Movies</a></li>
+                        <li><a href="{{ route('MoviesSeeder') }}">Movies</a></li>
                         <li><a href="{{ route('actors') }}">Actors</a></li>
                         <li><a href="{{ route('create_category') }}">Categories</a></li>
 
