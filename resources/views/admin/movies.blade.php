@@ -7,7 +7,7 @@
                 @csrf
                 <div class="form-group">
                 <label for="categories">Categories</label>
-                <select name="category" class="form-control col-2" id="exampleFormControlSelect1">
+                <select name="category_id" class="form-control col-2" id="exampleFormControlSelect1">
                     @foreach($cats as $cat)
                         <option  value="{{ $cat->id }}">{{ $cat->name }}</option>
                     @endforeach
@@ -41,7 +41,7 @@
                 <button type="submit" class="btn btn-primary">Save</button>
                 @else
                     <button type="submit" class="btn btn-primary">Update</button>
-                <a href="{{ route('movies') }}" class="btn btn-primary">New</a>
+                <a href="{{ route('moviesMoviesSeeder') }}" class="btn btn-primary">New</a>
                 @endif
             </form>
 

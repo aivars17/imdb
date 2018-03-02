@@ -10,7 +10,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  *
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Actor[] $actor
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Categories[] $categories
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Movie[] $movies
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Movie[] $moviesMoviesSeeder
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
  * @mixin \Eloquent
  * @property int $id
@@ -40,7 +40,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','role'
+        'name', 'email', 'password','role','fb_id',
     ];
 
     /**

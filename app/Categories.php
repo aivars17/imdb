@@ -20,10 +20,10 @@ use Illuminate\Database\Eloquent\Model;
 class Categories extends Model
 {
     public $timestamps = false;
-    protected $fillable = ['name', 'description'];
+    protected $fillable = ['name', 'description', 'user_id'];
 
-    public function movie()
+    public function movies()
     {
-        return $this->belongsTo('App\Movie');
+        return $this->hasMany('App\Movie','category_id');
     }
 }

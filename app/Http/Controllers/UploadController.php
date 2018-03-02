@@ -7,7 +7,6 @@ use Auth;
 use App\Actor;
 use App\Movie;
 use App\Categories;
-
 class UploadController extends Controller
 {
     public function index($id, $img_category)
@@ -49,9 +48,9 @@ class UploadController extends Controller
         $categories = Categories::all();
 
         if($user->role == 'admin'){
-            return view('admin.movies',[
+            return view('admin.moviesMoviesSeeder',[
                 'cats' => $categories,
-                'movies' => $movies,
+                'moviesMoviesSeeder' => $movies,
             ]);
         }
         return redirect()->route('single_movie', [$id,$movie->name]);

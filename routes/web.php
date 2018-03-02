@@ -31,9 +31,9 @@ Route::group(['middleware' => 'multiauth'], function () {
     Route::get('/admin/users', 'AdminController@users')->name('edit_users');
     Route::post('/admin/categories', 'AdminController@show')->name('edit_cat');
     Route::post('/admin/categories/{id}', 'AdminController@update_cat')->name('update_cat');
-    Route::get('/admin/movies', 'MoviesController@index')->name('movies');
-    Route::post('/admin/movies/update/{id}', 'MoviesController@movie_update')->name('movie_update');
-    Route::post('/admin/movies/save', 'MoviesController@movie_save')->name('movie_save');
+    Route::get('/admin/moviesMoviesSeeder', 'MoviesController@index')->name('moviesMoviesSeeder');
+    Route::post('/admin/moviesMoviesSeeder/update/{id}', 'MoviesController@movie_update')->name('movie_update');
+    Route::post('/admin/moviesMoviesSeeder/save', 'MoviesController@movie_save')->name('movie_save');
     Route::get('/admin/movie/{id}', 'MoviesController@movie_edit')->name('movie_edit');
     Route::get('/admin/actors', "ActorsController@actors")->name('actors');
     Route::post('/admin/actors/save', "ActorsController@actor_save")->name('actor_save');
@@ -45,13 +45,30 @@ Route::group(['middleware' => 'multiauth'], function () {
     Route::get('/admin/movie/delete/{id}', 'MoviesController@movie_delete')->name('movie_delete');
     Route::post('/admin/users/{id}', 'AdminController@admin_role')->name('admin_role');
     Route::get('/admin/users/delete/{id}', 'AdminController@user_delete')->name('user_delete');
+    Route::get('/home', 'HomeController@home')->name('home');
 });
 
-Route::get('/home', 'HomeController@home')->name('home');
+
+Route::get('/actor/{id}', 'ActorsController@single_actor')->name('single_actor');
+
 
 
 Route::get('/category', 'CategoryController@index')->name('category');
 Route::get('/movie/{id}/{name}', "HomeController@single_movie")->name('single_movie');
+Route::get('/orderby', "HomeController@orderby")->name('orderby');
+Route::middleware('guest')->group(function(){
+    Route::get('/fb/login', "FacebookController@redirect")->name('facebook.redirect');
+    Route::get('/fb/callback', "FacebookController@callback")->name('facebook.callback');
+});
+
+
+Route::get('/fb', 'FacebookController@view')->name('fb');
+//Route::post('/test', 'HomeController@test')->name('test');
+
+Route::get('autocomplete-search',array('as'=>'autocomplete.search','uses'=>'HomeCompleteController@test'));
+
+Route::get('autocomplete-ajax',array('as'=>'autocomplete.ajax','uses'=>'HomeCompleteController@ajaxData'));
+
 Auth::routes();
 
 

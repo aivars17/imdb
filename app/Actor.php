@@ -28,7 +28,7 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Actor extends Model
 {
-    protected $fillable = ['name', 'birthday', 'deathday'];
+    protected $fillable = ['name', 'birthday', 'deathday', 'user_id'];
 
     public function movie()
     {

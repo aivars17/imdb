@@ -32,12 +32,12 @@ class MoviesController extends Controller
             'category_id' => $request->category,
             ]);
 
-        return redirect()->route('movies', ['cats' => $categories])->with('status', 'success');
+        return redirect()->route('admin.movies', ['cats' => $categories])->with('status', 'success');
     }
     public function movie_edit($id)
     {
-        $categories = Categories::get();
-        $movies = Movie::get();
+        $categories = Categories::orderBy('name')->get();
+        $movies = Movie::all();
         $data = $movies->where('id', $id)->first();
 
        return view('admin.movies',[
@@ -48,6 +48,7 @@ class MoviesController extends Controller
     }
     public function movie_update($id, Request $request)
     {
+
         Movie::findOrFail($id)->update($request->except('_token'));
         return redirect()->back()->with('status', 'updated');
     }

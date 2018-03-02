@@ -13,7 +13,7 @@ class CreateForeingkey extends Migration
      */
     public function up()
     {
-        Schema::table('movies', function (Blueprint $table)
+        Schema::table('moviesMoviesSeeder', function (Blueprint $table)
         {
             $table->foreign('category_id')->references('id')->on('categories');
             $table->foreign('user_id')->references('id')->on('users');
@@ -36,7 +36,7 @@ class CreateForeingkey extends Migration
         {
             $table->dropForeign(['user_id']);
         });
-        Schema::table('movies', function (Blueprint $table)
+        Schema::table('moviesMoviesSeeder', function (Blueprint $table)
         {
             $table->dropForeign(['category_id','user_id']);
         });

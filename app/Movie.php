@@ -41,6 +41,10 @@ class Movie extends Model
     {
         return $this->morphMany('App\Image','imagable');
     }
+    public function category()
+    {
+        return $this->belongsTo('App\Categories','category_id');
+    }
     public function getFeatureImageAttribute()
     {
         if($this->image->first() == null){

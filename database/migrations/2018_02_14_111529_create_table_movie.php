@@ -13,7 +13,7 @@ class CreateTableMovie extends Migration
      */
     public function up()
     {
-        Schema::create('movies', function (Blueprint $table) {
+        Schema::create('moviesMoviesSeeder', function (Blueprint $table) {
             $table->unsignedInteger('id')->autoIncrement();
             $table->string('name');
             $table->unsignedInteger('category_id');
@@ -33,6 +33,6 @@ class CreateTableMovie extends Migration
      */
     public function down()
     {
-        Schema::drop('movies');
+        Schema::drop('moviesMoviesSeeder');
     }
 }
