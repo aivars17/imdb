@@ -17,8 +17,8 @@ class MoviesSeeder extends Seeder
     public function run()
     {
 
-        for ($page = 7; $page < 8; $page++) {
-            for ($y = 0; $y < 5; $y++) {
+        for ($page = 1; $page < 5; $page++) {
+            for ($y = 0; $y < 20; $y++) {
                 $path = 'https://api.themoviedb.org/3/discover/movie?api_key=be98f6d22107b703991b078fdf1aeb9c&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=' . $page;
                 $movies = json_decode(file_get_contents($path), true);
 
