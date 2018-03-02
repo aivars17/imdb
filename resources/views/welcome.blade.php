@@ -70,8 +70,8 @@
                 </div>
             </div>
         </div>
-        <div class="row text-center" >
-            <div class="col text-center"  style="padding-left: 40%">
+        <div class="row" >
+            <div class="col d-flex justify-content-around"  >
                 {{ $movies->links() }}
             </div>
         </div>

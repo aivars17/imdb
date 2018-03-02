@@ -82,4 +82,8 @@
         @endforeach
         </tbody>
     </table>
+    <div class="row"><div class="col" align="center"><div class="row"><div class="col" style="text-align: center">
+                {{ $actors->links() }}
+            </div></div></div></div>
+
 @endsection
